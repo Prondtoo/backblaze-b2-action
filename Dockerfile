@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3-alpine
 
 LABEL "com.github.actions.name"="Backblaze B2 Sync"
 LABEL "com.github.actions.description"="Sync a directory to a Backblaze B2 cloud storage bucket"
@@ -12,7 +12,7 @@ LABEL maintainer="Jake Jarvis <jake@jarv.is>"
 
 # https://github.com/Backblaze/B2_Command_Line_Tool/releases
 
-RUN pip install --quiet --no-cache-dir b2
+RUN pip3 install --quiet --no-cache-dir b2
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
